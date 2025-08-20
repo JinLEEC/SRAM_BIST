@@ -30,29 +30,29 @@ initial begin
 end
 
 bist #(
-    .value_3ff(10'h3FF),
-    .value_00 (10'h00 ),
-    .value_2aa(10'h2AA)
+    .value_3ff(10'h3FF              ),
+    .value_00 (10'h00               ),
+    .value_2aa(10'h2AA              )
 ) t0(
-    .clock          (clock),
-    .n_reset        (n_reset),
-    .bist_en        (bist_en),
-    .rd_data        (rd_data),
-    .csn            (csn),
-    .wen            (wen),
-    .wr_data        (wr_data),
-    .wr_addr        (wr_addr),
-    .b_done         (b_done),
-    .b_err          (b_err)
+    .clock          (clock          ),
+    .n_reset        (n_reset        ),
+    .bist_en        (bist_en        ),
+    .rd_data        (rd_data        ),
+    .csn            (csn            ),
+    .wen            (wen            ),
+    .wr_data        (wr_data        ),
+    .wr_addr        (wr_addr        ),
+    .b_done         (b_done         ),
+    .b_err          (b_err          )
 );
 
 u40spsram_256x10 t1(
-    .clka           (clock),
-    .ena            (~csn),
-    .wea            (~wen),
-    .addra          (wr_addr),
-    .dina           (wr_data),
-    .douta          (rd_data)
+    .clka           (clock          ),
+    .ena            (~csn           ),
+    .wea            (~wen           ),
+    .addra          (wr_addr        ),
+    .dina           (wr_data        ),
+    .douta          (rd_data        )
 );
 
 endmodule
